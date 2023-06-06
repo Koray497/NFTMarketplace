@@ -1,39 +1,32 @@
 import {
     Link
 } from "react-router-dom";
-import { Navbar, Nav, Button, Container } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
+import './Navbar.css';
 
-const Navigation = ({ web3Handler, account }) => {
+
+const Navigation = () => {
     return (
-        <Navbar expand="lg" bg="secondary" variant="dark">
+        <Navbar className="navbar" expand="lg" variant="dark">
             <Container>
                 <Navbar.Brand>
-                <img src="images.png" width="40" height="40" className="" alt="" />
+                <img src="fungible.png" width="40" height="40" className="" alt="" />
                     &nbsp;Fungible
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/createnft">Create NFT </Nav.Link>
-                        <Nav.Link as={Link} to="/listednft">Listed NFTs</Nav.Link>
-                        <Nav.Link as={Link} to="/purchases">Purchases</Nav.Link>
+                        <Nav.Link as={Link} to="/">Home &nbsp;&nbsp;&nbsp;</Nav.Link>
+                        <Nav.Link as={Link} to="/marketplace" className="navbaritems" >Marketplace &nbsp;&nbsp;&nbsp;</Nav.Link>
+                        <Nav.Link as={Link} to="/createnft">Create NFT&nbsp;&nbsp;&nbsp; </Nav.Link>
+                        <Nav.Link as={Link} to="/listednft">Listed NFTs&nbsp;&nbsp;&nbsp;</Nav.Link>
+                        <Nav.Link as={Link} to="/purchases">Purchases&nbsp;&nbsp;&nbsp;</Nav.Link>
+                        <Nav.Link as={Link} to="/collections">Collections&nbsp;&nbsp;&nbsp;</Nav.Link>
+                        <Nav.Link as={Link} to="/accounts">Accounts&nbsp;&nbsp;&nbsp;</Nav.Link>
                     </Nav>
                     <Nav>
-                        {account ? (
-                            <Nav.Link
-                                href={`https://etherscan.io/address/${account}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="button nav-button btn-sm mx-4">
-                                <Button variant="outline-light">
-                                    {account.slice(0, 5) + '...' + account.slice(38, 42)}
-                                </Button>
-
-                            </Nav.Link>
-                        ) : (
-                            <Button onClick={web3Handler} variant="outline-light">Connect with Wallet</Button>
-                        )}
+                    <Nav.Link className="authenticators"  as={Link} to="/register">Register&nbsp;&nbsp;&nbsp;</Nav.Link>
+                    <Nav.Link className="authenticators"  as={Link} to="/login">Account/Login&nbsp;&nbsp;&nbsp;</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -43,3 +36,5 @@ const Navigation = ({ web3Handler, account }) => {
 }
 
 export default Navigation;
+
+

@@ -3,7 +3,7 @@ import { ethers } from "ethers"
 import { Row, Col, Card } from 'react-bootstrap'
 
 export default function MyPurchases({ marketplace, nft, account }) {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [purchases, setPurchases] = useState([])
   const loadPurchasedItems = async () => {
     const filter =  marketplace.filters.Bought(null,null,null,null,null,account)
@@ -37,6 +37,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
   )
   return (
     <div className="flex justify-center">
+      <section className="new-firstpage" style={{padding:'50px'}}>
       {purchases.length > 0 ?
         <div className="px-5 container">
           <Row xs={1} md={2} lg={4} className="g-4 py-5">
@@ -55,6 +56,7 @@ export default function MyPurchases({ marketplace, nft, account }) {
             <h2>No Purchases</h2>
           </main>
         )}
+        </section>
     </div>
   );
 }

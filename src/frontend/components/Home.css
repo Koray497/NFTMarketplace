@@ -1,0 +1,350 @@
+
+
+*{
+    color:black;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+[class*="col-"] {
+    width:100%;
+}
+
+@media only screen and (min-width:600px) {
+    
+    .col-s-1 {
+        width:8.33%;
+    }
+    .col-s-2 {
+        width:16.66%;
+    }
+    .col-s-3 {
+        width:25%;
+    }
+    .col-s-4 {
+        width:33.33%;
+    }
+    .col-s-5 {
+        width:41.66%;
+    }
+    .col-s-6 {
+        width:50%;
+    }
+    .col-s-7 {
+        width:58.33%;
+    }
+    .col-s-8 {
+        width:66.66%;
+    }
+    .col-s-9 {
+        width:75%;
+    }
+    .col-s-10 {
+        width:83.33%;
+    }
+    .col-s-11 {
+        width:91.66%;
+    }
+    .col-s-12 {
+        width:100%;
+    }
+
+}
+
+
+@media only screen and (min-width:768px) {
+    
+    .col-1 {
+        width:8.33%;
+    }
+    .col-2 {
+        width:16.66%;
+    }
+    .col-3 {
+        width:25%;
+    }
+    .col-4 {
+        width:33.33%;
+    }
+    .col-5 {
+        width:41.66%;
+    }
+    .col-6 {
+        width:50%;
+    }
+    .col-7 {
+        width:58.33%;
+    }
+    .col-8 {
+        width:66.66%;
+    }
+    .col-9 {
+        width:75%;
+    }
+    .col-10 {
+        width:83.33%;
+    }
+    .col-11 {
+        width:91.66%;
+    }
+    .col-12 {
+        width:100%;
+    }
+
+}
+
+.center{
+    margin-top:40px;
+}
+
+main {
+    margin-top:66px;
+}
+
+.contents{
+    width:750px;
+    height:355.2px;
+    margin-bottom:48px;
+}
+
+.inputs {
+    margin-top:10px;
+}
+
+.news-section {
+    height:550px;
+    width:100%;
+}
+
+.title {
+    font-size:40px;
+    width:100%;
+    margin-left:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.title-text {
+    float:left;
+    color:#000;
+    margin-left:2.6em;
+    font-weight: bold;
+}
+
+
+[class*="col-"] {
+    float: left;
+    border-radius:10px;
+}
+
+.row::after {
+        content:"";
+        clear:both;
+        display:block;
+        
+}
+
+
+
+.news {
+    background-color: #feb745;
+    height:340px;
+    margin-bottom: 10px;
+    margin-left:90px;
+    position: relative;
+    transition:top ease 0.5s;
+    top:0;
+    border:2px solid rgb(142, 138, 138);
+}
+
+.news-image{
+    border-radius:5%;
+    width:100%;
+    height:240px;
+}
+
+.news:hover {
+    cursor:pointer;
+    top:-10px;
+}
+
+.news:nth-last-child(1) {
+    margin-bottom:0;
+}
+
+.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.news-line {
+    font-size:24px;
+    margin-top:15px;
+}
+
+.news-date {
+    float:right;
+    font-size:18px;
+    color:gray;
+}
+
+.firstpage {
+    position: relative;
+    width:100%;
+    height:100vh;
+    padding:100px;
+    background-color: rgb(226, 150, 28);
+    background-image: url("../../../public/nft-art.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.new-firstpage {
+    position: relative;
+    width:100%;
+    height:100vh;
+    padding:100px;
+    background: rgb(254,227,76);
+background: linear-gradient(90deg, rgba(254,227,76,1) 0%, rgba(254,173,55,1) 20%, rgba(254,173,55,1) 89%, rgba(254,182,61,1) 100%);background-size: cover;
+    background-attachment: fixed;
+}
+
+.marketfirstpage {
+    position: relative;
+    width:100%;
+    height:400vh;
+    padding:100px;
+    background: rgb(254,227,76);
+background: linear-gradient(90deg, rgba(254,227,76,1) 0%, rgba(254,173,55,1) 20%, rgba(254,173,55,1) 89%, rgba(254,182,61,1) 100%);background-size: cover;
+    background-attachment: fixed;
+}
+
+.secondpage {
+    position: relative;
+    width:100%;
+    height:100vh;
+    padding-top:100px;
+   background: rgb(254,227,76);
+background: linear-gradient(90deg, rgba(254,227,76,1) 0%, rgba(254,173,55,1) 20%, rgba(254,173,55,1) 89%, rgba(254,182,61,1) 100%);background-size: cover;
+    
+    background-attachment: scroll;
+}
+
+.thirdpage {
+    position: relative;
+    width:100%;
+    height:100vh;
+    padding-top:100px;
+    background: rgb(254,227,76);
+background: linear-gradient(90deg, rgba(254,227,76,1) 0%, rgba(254,173,55,1) 20%, rgba(254,173,55,1) 89%, rgba(254,182,61,1) 100%);background-size: cover;
+    
+}
+body,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* Set global font styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the homepage section */
+.homepage {
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Styling for the title section */
+.title-section {
+    position:absolute;
+    left:600px;
+    top:-10px;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.titlefu {
+  font-size: 2rem;
+  color: #000;
+}
+
+.title-type {
+  font-size: 3rem;
+  color: #000;
+}
+
+.btn-title {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, rgba(255,24,91,1) 35%, rgba(255,156,15,1) 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius:20px;
+    transition: background 1s ease-in-out;
+  }
+  
+  .btn-title:hover {
+    background: linear-gradient(90deg, rgba(255,156,15,1) 35%, rgba(255,24,91,1) 100%);
+  }
+
+/* Styling for the news section */
+.news-section {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.title-text {
+  font-size: 2.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.news {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 1rem;
+}
+
+.news-image {
+  width: 100%px;
+  height: 200px;
+  object-fit:cover;
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.news-line {
+  font-size: 1.2rem;
+  color: #000;
+  margin-top: 1rem;
+}
+
+.news-date {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}

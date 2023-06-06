@@ -4,7 +4,7 @@ import { Row, Form, Button } from 'react-bootstrap'
 import {Buffer} from 'buffer';
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
-const projectId = 'Your project ID'
+const projectId = 'Your Project id'
 const projectSecret = 'Your Project Secret'
 const authorization = 'Basic ' + Buffer.from(projectId + ":" + projectSecret).toString('base64')
 
@@ -18,8 +18,7 @@ const client = ipfsHttpClient({
   }
 })
 
-
-const Create = ({ marketplace, nft }) => {
+const Create = ({ marketplace, nft ,mintlazy,incrementXp }) => {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(null)
   const [name, setName] = useState('')
@@ -32,7 +31,7 @@ const Create = ({ marketplace, nft }) => {
         const result = await client.add(file)
         console.log(result)
        
-        setImage(`https://{yourprojectname}.infura-ipfs.io/ipfs/${result.path}`)
+        setImage(`https://pyhoxus.infura-ipfs.io/ipfs/${result.path}`)
       } catch (error){
         console.log("ipfs image upload error: ", error)
       }
@@ -48,7 +47,7 @@ const Create = ({ marketplace, nft }) => {
     }
   }
   const mintThenList = async (result) => {
-    const uri = `https://{yourprojectname}.infura-ipfs.io/ipfs/${result.path}`
+    const uri = `https://pyhoxus.infura-ipfs.io/ipfs/${result.path}`
     console.log(uri)
     // mint nft 
     await(await nft.mint(uri)).wait()
@@ -59,11 +58,14 @@ const Create = ({ marketplace, nft }) => {
     // add nft to marketplace
     const listingPrice = ethers.utils.parseEther(price.toString())
     await(await marketplace.makeItem(nft.address, id, listingPrice)).wait()
+    incrementXp(100)
   };
 
 
+
   return (
-    <div className="container-fluid mt-5">
+    <div className="container-fluid mt-5" style={{ padding: '0' }}>
+      <section className="new-firstpage" style={{padding:'50px'}}>
       <div className="row">
         <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '1000px' }}>
           <div className="content mx-auto">
@@ -78,14 +80,18 @@ const Create = ({ marketplace, nft }) => {
               <Form.Control onChange={(e) => setDescription(e.target.value)} size="lg" required as="textarea" placeholder="Description" />
               <Form.Control onChange={(e) => setPrice(e.target.value)} size="lg" required type="number" placeholder="ETH Price" />
               <div className="d-grid px-0">
-                <Button onClick={createNFT} variant="primary" size="lg">
+                <Button onClick={createNFT} className="btn-title" variant="primary" size="lg">
                   Create NFT and List!
+                </Button>
+                <Button onClick={() => mintlazy(image,price,name,description)} className="btn-title" variant="primary" size="lg" style={{marginTop:'25px'}}>
+                  Lazy Mint this NFT!
                 </Button>
               </div>
             </Row>
           </div>
         </main>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

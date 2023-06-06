@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
 import { Row, Col, Card } from 'react-bootstrap'
 
+
 function renderSoldItems(items) {
   return (
     <>
@@ -23,7 +24,7 @@ function renderSoldItems(items) {
 }
 
 export default function MyListedItems({ marketplace, nft, account }) {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [listedItems, setListedItems] = useState([])
   const [soldItems, setSoldItems] = useState([])
   const loadListedItems = async () => {
@@ -68,8 +69,10 @@ export default function MyListedItems({ marketplace, nft, account }) {
       <h2>Loading...</h2>
     </main>
   )
+
   return (
     <div className="flex justify-center">
+      <section className="new-firstpage" style={{padding:'50px'}}>
       {listedItems.length > 0 ?
         <div className="px-5 py-3 container">
             <h2>Listed</h2>
@@ -90,6 +93,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
             <h2>No listed NFTs</h2>
           </main>
         )}
+        </section>
     </div>
   );
 }
