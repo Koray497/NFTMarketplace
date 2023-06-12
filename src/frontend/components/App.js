@@ -29,8 +29,8 @@ import {Buffer} from 'buffer';
 export var loggedacc;
 export var loggedwal;
 
-const projectId = '2IGMCg8yqL6daRvtnONAHzHNZTe'
-const projectSecret = '3d705c5d7ca6650349c39d0f96f6f574'
+const projectId = 'Your Project Id'
+const projectSecret = 'Your Project Secret'
 const authorization = 'Basic ' + Buffer.from(projectId + ":" + projectSecret).toString('base64')
 
 const client = ipfsHttpClient({
